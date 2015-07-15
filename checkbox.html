@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html height="100%">
+
+<html lang="ja">
+<meta charset="UTF-8">
+
+<head>
+	<title>はじめてのJavascript</title>
+<h1>はじめてのJavascript</h1>
+</head>
+    <body>
+<form name="chbox">
+<p>Which bands do you like?</p>
+<input type="checkbox" value="Memphis May Fire">Memphis May Fire<br>
+<input type="checkbox" value="Miss May I">Miss May I<br>
+<input type="checkbox" value="Asking Alexandria">Asking Alexandria<br>
+<input type="checkbox" value="I See Stars">I See Stars<br>
+<input type="checkbox" value="Of Mice & Men">Of Mice & Men<br>
+<input type="checkbox" value="blessthefall">blessthefall<br>
+<input type="button" value="確認" onclick="boxCheck()">
+</form>
+
+<script>
+function boxCheck(){
+
+	var str="" ;
+for ( i = 0; i < 6; i++) {
+if (document.chbox.elements[i].checked) {
+	if (str != "") str=str+",";
+	str=str+document.chbox.elements[i].value;
+}
+}
+if (str=="" ){
+	alert( "Choose at least one." );
+}else{
+	alert( str + " was chose!" );
+}
+}
+</script>
+
+<body>
+</body>
+</html>  
+
