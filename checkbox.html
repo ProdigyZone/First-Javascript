@@ -17,6 +17,7 @@
 <input type="checkbox" value="I See Stars">I See Stars<br>
 <input type="checkbox" value="Of Mice & Men">Of Mice & Men<br>
 <input type="checkbox" value="blessthefall">blessthefall<br>
+<input type="checkbox" value="No bands" onchange="noch()">No bands<br>
 <input type="button" value="確認" onclick="boxCheck()">
 </form>
 
@@ -36,6 +37,16 @@ if (str=="" ){
 	alert( str + " was chose!" );
 }
 }
+
+function noch(){
+	if (document.chbox.elements[5].checked) {
+		for(i = 0; i < 6; i++){
+			document.chbox.elements[i].checked = false;
+		}
+	}
+
+}
+
 </script>
 
 <body>
