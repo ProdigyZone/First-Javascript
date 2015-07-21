@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html height="100%">
+
+<html lang="ja">
+<meta charset="UTF-8">
+
+<head>
+	<title>はじめてのJavascript</title>
+<h1>はじめてのJavascript</h1>
+</head>
+    <body>
+<form name="selbox">
+<p>Which band do you like?</p>
+<select name="band" onchange="Bandset()">
+<option value="">Choose Band</option>
+<option value="">Asing Alexandria</option>
+<option value="">Memphis May Fire </option>
+<option value="">Bring Me The Horizon</option>
+
+</select>
+
+<p>Choose Song</p>
+<select name="song">
+<option value=""></option>
+<option value=""></option>
+<option value=""></option>
+<option value=""></option>
+<option value=""></option>
+<option value=""></option>
+
+</select>
+</form>
+
+
+
+<script>
+
+var AA=new Array(
+	"","Final Episode","The Prophecy","Not The American Average","Someone Somewhere","Run Free","The Death Of Me"
+	 );
+
+var MMF=new Array(
+	"","Vices","Prove Me Right","The Sinner","No Ordinary Love", "Ghost In The Mirror", "Miles Away" 
+	);
+
+var BMTH=new Array(
+	"", "Pray For Plague","Shadow Moses","It Never Ends","Sleepwalking","Drown","Happy Song"
+	);
+
+function Bandset(){
+	for(i=1; i<7; i++){
+		switch (document.selbox.band.selectedIndex){
+			case 0: document.selbox.song.options[i].text="";break;
+			case 1: document.selbox.song.options[i].text=AA[i];break;
+			case 2: document.selbox.song.options[i].text=MMF[i];break;
+			case 3: document.selbox.song.options[i].text=BMTH[i];break;
+		}
+	}
+	document.selbox.song.selectedIndex=0;
+}
+
+</script> 
+
+
+
+</body>
+</html>   
