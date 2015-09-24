@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>First Javascript</title>
+</head>
+<link rel="stylesheet" type="text/css" href="index.css">
+
+<body onload="scroll()">
+<h1>First Javascript</h1>
+<br><br><br><br><br><br><br><br><br><br>
+STAFF<br>
+<br><br><br>
+企画<br>Nakanishi Jun<br><br><br>
+構成<br>Nakanishi Jun<br><br><br>
+プログラム<br>Nakanishi Jun<br><br><br>
+製作環境<br>Sublime Text Ver.3.0<br><br><br>
+技術提供<br>JS入門<br><br><br>
+<br><br><br>
+<span style = "font-size:80pt">Fin</span><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<script>
+function winOpen(){
+	var w = (screen.width-640)/2;
+	var h = (screen.height-480)/2;
+
+	window.open("staffroll.html", "sub", "width=640,height=480," +
+		"left="+w+",top="+h+",scrollbars=no,menubar=no,toolbar=no");
+}
+
+function scroll(){
+	scrollBy(0,2);
+	setTimeout("scroll()", 30);
+}
+</script>
+
+<form>
+<input type="button" value="staffroll" onclick="winOpen()">
+</form>
+
+</body>
+</html>
