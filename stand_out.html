@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>First Javascript</title>
+</head>
+<link rel="stylesheet" type="text/css" href="index.css">
+
+<body>
+<h1>First Javascript</h1>
+<div id = "end">おわり</div>
+<form name="btn">
+<input type="button" value="タイマー開始" onclick="tmStart()">
+</form>
+<style type="text/css">
+	div#end{
+		font-size: 50pt;
+		text-align: center;
+		color: black;
+		background-color:black;
+		border: 1px solid gray;
+
+	}
+</style>
+
+<script type="text/Javascript">
+var cnt = 0;
+var timer1;
+
+function tmStart() {
+	var col16,obj;
+	if (document.getElementById){
+		if (cnt == 0) {
+			document.btn.elements[0].disabled = true;	
+		}
+		obj = document.getElementById("end");
+		if (cnt < 16) {
+			col16 = cnt.toString(16);
+			obj.style.color = "#"+ col16+col16+col16;
+
+		}
+		if (cnt > 48 ) {
+			col16 = (64-cnt).toString(16);
+			obj.style.color= "#"+col16+col16+col16; 
+		}
+		cnt++;
+		if (cnt <= 64) {
+			timer1=setTimeout("tmStart()" , 100);
+		}
+		else
+		{
+			clearTimeout(timer1);
+			cnt=0;
+			document.btn.elements[0].disabled=false;
+		}
+	}
+
+}
+
+</script>
+</body>
+</html>
